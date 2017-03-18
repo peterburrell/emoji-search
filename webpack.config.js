@@ -1,13 +1,20 @@
 var path = require('path')
 var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
-    filename: 'build.js'
+    //publicPath: '/dist/',
+    filename: 'main.js'
   },
+  plugins: [ 
+    new HtmlWebpackPlugin({
+      template: 'index.html',
+      title: 'emoji-search'
+    }) 
+  ],
   module: {
     rules: [
       {
@@ -44,6 +51,7 @@ module.exports = {
     }
   },
   devServer: {
+    contentBase: path.join(__dirname, 'dist'),
     historyApiFallback: true,
     noInfo: true
   },
