@@ -11,6 +11,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "emojione": "^2.2.7",
     "vue": "^2.2.1"
   },
   "devDependencies": {
